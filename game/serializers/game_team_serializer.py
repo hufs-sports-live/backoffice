@@ -29,9 +29,9 @@ class GameTeamPlayerChangeSerialzier(serializers.ModelSerializer):
         model = GameTeamPlayer
         fields = ('id', 'name', 'description',)
 
-class GameTeamScoreMappingSerializer(serializers.Serializer):
+class _GameTeamScoreMappingSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     score = serializers.IntegerField()
 
 class GameScoreChangeSerializer(serializers.Serializer):
-    teamIdScore = GameTeamScoreMappingSerializer(many=True, source='team_score')
+    teamIdScore = _GameTeamScoreMappingSerializer(many=True, source='team_score')
