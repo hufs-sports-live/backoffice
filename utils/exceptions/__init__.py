@@ -1,0 +1,1 @@
+from utils.exceptions.exception_handler import custom_exception_handler
